@@ -1,0 +1,44 @@
+* { 
+    font-family: Ubuntu;
+    font-size: 1.3rem;
+	min-height: 0;
+}
+window#waybar {
+    background: transparent;
+}
+window > box {
+	margin: 0 15px 0 15px;
+    background: rgba(13, 25, 37, 0.9); 
+    color: white;
+}
+
+#workspaces button {
+    border-radius: 0;
+	background: transparent;
+    color: white;
+}
+
+#workspaces button.focused {
+    background: #6da7a8;
+}
+
+#clock, #battery, #cpu, #memory, #backlight, #custom-alsa {
+	padding: 0 0.6em;
+	border-left: 2px dotted white;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#battery.critical:not(.charging) {
+	color: #ab7c86;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
